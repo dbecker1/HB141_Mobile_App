@@ -104,11 +104,13 @@ class SnapRecyclerAdapter extends RecyclerView.Adapter<SnapRecyclerAdapter.Recyc
             holder.generalEstablishmentView.setVisibility(View.GONE);
             holder.establishmentCardView.setCardBackgroundColor(Color.WHITE); //todo: change color to something using the name here and then set background image to transparent if no image is found.
             //holder.establishmentInspectButton.getBackground().setColorFilter(ContextCompat.getColor(context, R.color.colorAccent), PorterDuff.Mode.SRC_ATOP);
-            holder.establishmentInspectButton.setOnClickListener(new View.OnClickListener() {
+            //holder.establishmentInspectButton.setOnClickListener(new View.OnClickListener() {
+            holder.establishmentCardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(context, ReportActivity.class);
                     intent.putExtra("establishment", establishment);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
                     //Toast.makeText(context, establishment.getName(), Toast.LENGTH_SHORT).show();
                 }
@@ -168,7 +170,7 @@ class SnapRecyclerAdapter extends RecyclerView.Adapter<SnapRecyclerAdapter.Recyc
     class RecyclerViewHolder extends RecyclerView.ViewHolder {
         private ImageView establishmentBackground;
         private TextView establishmentAttribution;
-        private ImageView establishmentInspectButton;
+        //private ImageView establishmentInspectButton;
         private TextView establishmentName;
         private TextView establishmentTypes;
         private CardView establishmentCardView;
@@ -181,7 +183,7 @@ class SnapRecyclerAdapter extends RecyclerView.Adapter<SnapRecyclerAdapter.Recyc
 
             establishmentBackground = (ImageView) v.findViewById(R.id.establishment_background);
             establishmentAttribution = (TextView) v.findViewById(R.id.establishment_attribution);
-            establishmentInspectButton = (ImageView) v.findViewById(R.id.establishment_inspect_button);
+            //establishmentInspectButton = (ImageView) v.findViewById(R.id.establishment_inspect_button);
             establishmentName = (TextView) v.findViewById(R.id.establishment_name);
             establishmentTypes = (TextView) v.findViewById(R.id.establishment_types);
             establishmentCardView = (CardView) v.findViewById(R.id.establishment_cardview);

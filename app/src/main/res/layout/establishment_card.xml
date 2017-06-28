@@ -34,7 +34,7 @@
             android:fontFamily="san-serif-light"
             android:layout_margin="5dp"/>
 
-        <ImageView
+        <!--<ImageView
             android:id="@+id/establishment_inspect_button"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -42,7 +42,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_margin="5dp"
-            android:contentDescription="Inspect" />
+            android:contentDescription="Inspect" />-->
 
         <RelativeLayout
             android:layout_width="wrap_content"
