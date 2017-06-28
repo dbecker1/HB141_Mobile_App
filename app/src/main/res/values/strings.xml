@@ -13,7 +13,7 @@
 
     <!-- Drawer Header -->
     <string name="nav_header_maintitle_string" translatable="false">First Last</string>
-    <string name="nav_header_subtitle_string" translatable="false">userid | 100 Points</string>
+    <string name="nav_header_subtitle_string" translatable="false">userid</string>
 
     <!-- Drawer -->
     <string name="navigation_drawer_open_string">Open navigation drawer</string>

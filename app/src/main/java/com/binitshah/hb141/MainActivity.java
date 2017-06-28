@@ -117,11 +117,11 @@ public class MainActivity extends AppCompatActivity
                 if (user != null) {
                     TextView maintitle = (TextView) navigationView.getHeaderView(0).findViewById(R.id.nav_header_maintitle_id);
                     final TextView subtitle = (TextView) navigationView.getHeaderView(0).findViewById(R.id.nav_header_subtitle_id);
-                    CircleImageView propic = (CircleImageView) navigationView.getHeaderView(0).findViewById(R.id.nav_header_propic_id);
+                    //CircleImageView propic = (CircleImageView) navigationView.getHeaderView(0).findViewById(R.id.nav_header_propic_id);
                     maintitle.setText(user.getDisplayName());
                     subtitle.setText(user.getEmail());
 
-                    DatabaseReference ref = mDatabase.child("users").child(user.getUid()).child("reputation");
+                   /* DatabaseReference ref = mDatabase.child("users").child(user.getUid()).child("reputation");
                     ValueEventListener postListener = new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
@@ -136,10 +136,10 @@ public class MainActivity extends AppCompatActivity
                             Log.w(TAG, "Getting data from firebase database failed.", databaseError.toException());
                         }
                     };
-                    ref.addListenerForSingleValueEvent(postListener);
+                    ref.addListenerForSingleValueEvent(postListener);*/
 
                     //see if we have the profile picture locally stored and if so, then set it.
-                    if(doesProfilePicExist()) {
+                    /*if(doesProfilePicExist()) {
                         Log.d(TAG, "It does and we've set it as a temp.");
                         propic.setImageBitmap(BitmapFactory.decodeFile(getExternalFilesDir(Environment.DIRECTORY_PICTURES).toString() + "/hb141/propic.jpg"));
                     }
@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity
                     }
                     catch (NullPointerException e) {
                         Snackbar.make(findViewById(android.R.id.content), "Unable to retrieve user data", Snackbar.LENGTH_SHORT).show();
-                    }
+                    }*/
                 }
             }
         };
@@ -263,7 +263,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.search_location:
@@ -277,7 +277,7 @@ public class MainActivity extends AppCompatActivity
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
