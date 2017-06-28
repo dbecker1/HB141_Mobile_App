@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HB141_Mobile_App.iml" filepath="$PROJECT_DIR$/HB141_Mobile_App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IHTI-Action-Android.iml" filepath="$PROJECT_DIR$/IHTI-Action-Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

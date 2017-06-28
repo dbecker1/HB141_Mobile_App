@@ -310,8 +310,12 @@ public class MapFragment extends Fragment implements GoogleApiClient.ConnectionC
     @Override
     public void onDestroy(){
         super.onDestroy();
-        mMapView.onDestroy();
-        mGoogleApiClient.disconnect();
+        if (mMapView != null) {
+            mMapView.onDestroy();
+        }
+        if (mGoogleApiClient != null) {
+            mGoogleApiClient.disconnect();
+        }
     }
 
     @Override

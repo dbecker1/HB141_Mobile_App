@@ -99,7 +99,7 @@ public class LoginActivity extends FragmentActivity implements GoogleApiClient.O
     private EditText passwordSignUpField;
     private EditText confirmPassSignUpField;
     private Button signUpButton;
-    private CircleImageView mSignUpPropic;
+    //private CircleImageView mSignUpPropic;
     private Bitmap photo;
     private boolean photoTaken = false;
 
@@ -204,7 +204,7 @@ public class LoginActivity extends FragmentActivity implements GoogleApiClient.O
         };
 
         //handles sign up
-        mSignUpPropic = (CircleImageView) findViewById(R.id.propic_signup_field_id);
+        /*mSignUpPropic = (CircleImageView) findViewById(R.id.propic_signup_field_id);
         mSignUpPropic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -219,7 +219,7 @@ public class LoginActivity extends FragmentActivity implements GoogleApiClient.O
                         if(which == 0) {
                             Intent intent = new Intent(Intent.ACTION_PICK,
                                     MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-                            intent.setType("image/*");
+                            intent.setType("image*//*");
                             startActivityForResult(intent, FILE_SYSTEM_REQUEST_CODE);
                         }
                         else if(which == 1) {
@@ -234,7 +234,7 @@ public class LoginActivity extends FragmentActivity implements GoogleApiClient.O
                 });
                 builder.show();
             }
-        });
+        });*/
         nameSignUpField = (EditText) findViewById(R.id.name_signup_field_id);
         emailSignUpField = (EditText) findViewById(R.id.email_signup_field_id);
         passwordSignUpField = (EditText) findViewById(R.id.password_signup_field_id);
@@ -608,10 +608,10 @@ public class LoginActivity extends FragmentActivity implements GoogleApiClient.O
             Snackbar.make(findViewById(android.R.id.content), "The passwords do not match", Snackbar.LENGTH_SHORT).show();
             return false;
         }
-        if(!photoTaken) {
+        /*if(!photoTaken) {
             Snackbar.make(findViewById(android.R.id.content), "Profile picture not set", Snackbar.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
 
         return true;
     }
@@ -679,7 +679,7 @@ public class LoginActivity extends FragmentActivity implements GoogleApiClient.O
             try {
                 Uri selectedImageUri = data.getData();
                 photo = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImageUri);
-                mSignUpPropic.setImageBitmap(photo);
+                //mSignUpPropic.setImageBitmap(photo);
                 photoTaken = true;
             }
             catch (Exception e) {
@@ -690,7 +690,7 @@ public class LoginActivity extends FragmentActivity implements GoogleApiClient.O
             Bundle extras = data.getExtras();
             if(extras != null) {
                 photo = (Bitmap) extras.get("data");
-                mSignUpPropic.setImageBitmap(photo);
+                //mSignUpPropic.setImageBitmap(photo);
                 photoTaken = true;
             }
             else {
